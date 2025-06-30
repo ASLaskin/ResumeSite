@@ -67,8 +67,6 @@ function WorkPortfolio() {
 				}}
 			/>
 
-
-
 			<div className="relative z-10">
 				<Header
 					isDark={isDark}
@@ -161,7 +159,13 @@ function WorkPortfolio() {
 									interesting projects.
 								</p>
 								<button
-									className={`px-8 py-4 rounded-xl font-semibold border-2 transition-all duration-300 hover:scale-105 ${
+									onClick={() =>
+										window.open(
+											'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=andrewlaskin6@gmail.com',
+											'_blank'
+										)
+									}
+									className={`px-8 cursor-pointer py-4 rounded-xl font-semibold border-2 transition-all duration-300 hover:scale-105 ${
 										isDark
 											? 'border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500'
 											: 'border-emerald-600/50 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-600'
