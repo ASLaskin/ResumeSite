@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Calendar, Users, Github, ExternalLink } from 'lucide-react';
 
-const ProjectCard = ({ project, isDark, delay }) => {
+const ProjectCard = ({ project, isDark, isLoaded, delay }) => {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
@@ -10,7 +10,7 @@ const ProjectCard = ({ project, isDark, delay }) => {
 				isDark
 					? 'bg-gray-900/50 border-gray-700/50 hover:bg-gray-800/50 hover:border-emerald-500/30'
 					: 'bg-white/50 border-gray-200/50 hover:bg-white/80 hover:border-emerald-300/50'
-			} backdrop-blur-sm animate-fadeInUp`}
+			} backdrop-blur-sm opacity-0 ${isLoaded ? 'animate-fadeInUp' : ''}`}
 			style={{ animationDelay: delay }}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}

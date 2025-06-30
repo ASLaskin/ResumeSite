@@ -80,8 +80,8 @@ function App() {
 					<div className="max-w-5xl mx-auto text-center">
 						<div className="space-y-8">
 							<div
-								className={`animate-fadeInUp ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
 								}`}
 								style={{ animationDelay: '0.2s' }}
 							>
@@ -97,8 +97,8 @@ function App() {
 							</div>
 
 							<div
-								className={`animate-fadeInUp ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
 								}`}
 								style={{ animationDelay: '0.4s' }}
 							>
@@ -125,8 +125,8 @@ function App() {
 							</div>
 
 							<div
-								className={`animate-fadeInUp ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
 								}`}
 								style={{ animationDelay: '0.6s' }}
 							>
@@ -142,9 +142,9 @@ function App() {
 							</div>
 
 							<div
-								className={`animate-fadeInUp flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
-								}`}
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
+								} flex flex-col sm:flex-row gap-4 justify-center items-center pt-8`}
 								style={{ animationDelay: '0.8s' }}
 							>
 								<button
@@ -181,9 +181,9 @@ function App() {
 							</div>
 
 							<div
-								className={`animate-fadeInUp flex justify-center gap-6 pt-8 ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
-								}`}
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
+								} flex justify-center gap-6 pt-8`}
 								style={{ animationDelay: '1s' }}
 							>
 								{[

@@ -78,8 +78,8 @@ function WorkPortfolio() {
 					<div className="max-w-6xl mx-auto">
 						<div className="text-center mb-12">
 							<div
-								className={`animate-fadeInUp ${
-									isLoaded ? 'opacity-100' : 'opacity-0'
+								className={`opacity-0 ${
+									isLoaded ? 'animate-fadeInUp' : ''
 								}`}
 								style={{ animationDelay: '0.2s' }}
 							>
@@ -125,15 +125,16 @@ function WorkPortfolio() {
 									key={index}
 									project={project}
 									isDark={isDark}
+									isLoaded={isLoaded}
 									delay={`${0.4 + index * 0.1}s`}
 								/>
 							))}
 						</div>
 
 						<div
-							className={`text-center mt-16 animate-fadeInUp ${
-								isLoaded ? 'opacity-100' : 'opacity-0'
-							}`}
+							className={`opacity-0 ${
+								isLoaded ? 'animate-fadeInUp' : ''
+							} text-center mt-16`}
 							style={{ animationDelay: '1s' }}
 						>
 							<div
