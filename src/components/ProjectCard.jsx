@@ -126,7 +126,10 @@ const ProjectCard = ({ project, isDark, isLoaded, delay }) => {
 
 				<div className="flex gap-3">
 					{project.github && (
-						<button
+						<a
+							href={project.github}
+							target="_blank"
+							rel="noopener noreferrer"
 							className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 ${
 								isDark
 									? 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-emerald-400'
@@ -135,10 +138,13 @@ const ProjectCard = ({ project, isDark, isLoaded, delay }) => {
 						>
 							<Github size={16} />
 							Code
-						</button>
+						</a>
 					)}
 					{project.demo && (
-						<button
+						<a
+							href={project.demo}
+							target="_blank"
+							rel="noopener noreferrer"
 							className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 ${
 								isDark
 									? 'bg-emerald-600/80 text-white hover:bg-emerald-500'
@@ -147,7 +153,7 @@ const ProjectCard = ({ project, isDark, isLoaded, delay }) => {
 						>
 							<ExternalLink size={16} />
 							Live Demo
-						</button>
+						</a>
 					)}
 				</div>
 			</div>
