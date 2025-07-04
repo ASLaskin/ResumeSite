@@ -3,9 +3,10 @@ import { Download } from 'lucide-react';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../projectData';
+import { useTheme } from '../contexts/themeContext';
 
 function WorkPortfolio() {
-	const [isDark, setIsDark] = useState(true);
+	const { isDark, toggleTheme } = useTheme();
 	const [currentTime, setCurrentTime] = useState(new Date());
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [showMain, setShowMain] = useState(false);
@@ -19,10 +20,6 @@ function WorkPortfolio() {
 
 		return () => clearInterval(timer);
 	}, []);
-
-	const toggleTheme = () => {
-		setIsDark(!isDark);
-	};
 
 	const handleDownloadResume = () => {
 		//ADD THIS

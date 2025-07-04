@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import Header from './components/Header';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from './contexts/themeContext';
 
 function App() {
-	const [isDark, setIsDark] = useState(true);
+	const { isDark, toggleTheme } = useTheme();
 	const [currentTime, setCurrentTime] = useState(new Date());
 	const [isLoaded, setIsLoaded] = useState(false);
 	const navigate = useNavigate();
@@ -19,10 +20,6 @@ function App() {
 
 		return () => clearInterval(timer);
 	}, []);
-
-	const toggleTheme = () => {
-		setIsDark(!isDark);
-	};
 
 	return (
 		<div
