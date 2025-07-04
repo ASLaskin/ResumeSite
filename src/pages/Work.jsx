@@ -22,8 +22,10 @@ function WorkPortfolio() {
 	}, []);
 
 	const handleDownloadResume = () => {
-		//ADD THIS
-		console.log('Downloading resume...');
+		const link = document.createElement('a');
+		link.href = '/Resume2025.pdf';
+		link.download = 'Andrew_Laskin_Resume.pdf';
+		link.click();
 	};
 
 	if (showMain) {
@@ -47,16 +49,14 @@ function WorkPortfolio() {
 
 	return (
 		<div
-			className={`min-h-screen transition-all duration-500 ${
-				isDark ? 'bg-gray-950 text-white' : 'bg-gray-50 text-gray-900'
-			}`}
+			className={`min-h-screen transition-all duration-500 ${isDark ? 'bg-gray-950 text-white' : 'bg-gray-50 text-gray-900'
+				}`}
 		>
 			<div
-				className={`fixed inset-0 ${
-					isDark
+				className={`fixed inset-0 ${isDark
 						? 'bg-gradient-radial from-emerald-900/40 via-emerald-950/20 to-gray-950'
 						: 'bg-gradient-radial from-emerald-100/40 via-gray-50 to-gray-50'
-				}`}
+					}`}
 				style={{
 					background: isDark
 						? 'radial-gradient(ellipse at center, rgba(6, 78, 59, 0.4) 0%, rgba(6, 78, 59, 0.2) 30%, rgb(3, 7, 18) 70%)'
@@ -75,25 +75,22 @@ function WorkPortfolio() {
 					<div className="max-w-6xl mx-auto">
 						<div className="text-center mb-12">
 							<div
-								className={`opacity-0 ${
-									isLoaded ? 'animate-fadeInUp' : ''
-								}`}
+								className={`opacity-0 ${isLoaded ? 'animate-fadeInUp' : ''
+									}`}
 								style={{ animationDelay: '0.2s' }}
 							>
 								<h1 className="text-4xl lg:text-5xl font-bold mb-6">
 									My{' '}
 									<span
-										className={`animate-glow ${
-											isDark ? 'text-emerald-400' : 'text-emerald-600'
-										}`}
+										className={`animate-glow ${isDark ? 'text-emerald-400' : 'text-emerald-600'
+											}`}
 									>
 										Work
 									</span>
 								</h1>
 								<p
-									className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto mb-8 ${
-										isDark ? 'text-gray-300' : 'text-gray-600'
-									}`}
+									className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'
+										}`}
 								>
 									A collection of projects that showcase my passion for building
 									scalable, user-focused applications with modern technologies.
@@ -101,11 +98,10 @@ function WorkPortfolio() {
 
 								<button
 									onClick={handleDownloadResume}
-									className={`group inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg ${
-										isDark
+									className={`group inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg ${isDark
 											? 'bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-emerald-500/25'
 											: 'bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-emerald-600/25'
-									}`}
+										}`}
 								>
 									<Download size={20} />
 									Download Resume
@@ -129,29 +125,25 @@ function WorkPortfolio() {
 						</div>
 
 						<div
-							className={`opacity-0 ${
-								isLoaded ? 'animate-fadeInUp' : ''
-							} text-center mt-16`}
+							className={`opacity-0 ${isLoaded ? 'animate-fadeInUp' : ''
+								} text-center mt-16`}
 							style={{ animationDelay: '1s' }}
 						>
 							<div
-								className={`inline-block p-8 rounded-2xl border ${
-									isDark
+								className={`inline-block p-8 rounded-2xl border ${isDark
 										? 'bg-gray-900/50 border-gray-700/50'
 										: 'bg-white/50 border-gray-200/50'
-								} backdrop-blur-sm`}
+									} backdrop-blur-sm`}
 							>
 								<h3
-									className={`text-2xl font-bold mb-4 ${
-										isDark ? 'text-white' : 'text-gray-900'
-									}`}
+									className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'
+										}`}
 								>
 									Interested in working together?
 								</h3>
 								<p
-									className={`mb-6 ${
-										isDark ? 'text-gray-300' : 'text-gray-600'
-									}`}
+									className={`mb-6 ${isDark ? 'text-gray-300' : 'text-gray-600'
+										}`}
 								>
 									I'm always open to discussing new opportunities and
 									interesting projects.
@@ -163,11 +155,10 @@ function WorkPortfolio() {
 											'_blank'
 										)
 									}
-									className={`px-8 cursor-pointer py-4 rounded-xl font-semibold border-2 transition-all duration-300 hover:scale-105 ${
-										isDark
+									className={`px-8 cursor-pointer py-4 rounded-xl font-semibold border-2 transition-all duration-300 hover:scale-105 ${isDark
 											? 'border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500'
 											: 'border-emerald-600/50 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-600'
-									}`}
+										}`}
 								>
 									Get In Touch
 								</button>
