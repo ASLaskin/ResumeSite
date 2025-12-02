@@ -8,7 +8,8 @@ const Header = ({ isDark, toggleTheme, currentTime }) => {
 	return (
 		<header className="relative z-20 px-6 lg:px-8 py-6">
 			<div className="flex justify-between items-center max-w-6xl mx-auto">
-				<div className="animate-fadeInLeft">
+				<div className="animate-fadeInLeft flex">
+					
 					<h2
 						onClick={() => navigate('/')}
 						className={`text-lg cursor-pointer font-semibold ${
@@ -16,6 +17,22 @@ const Header = ({ isDark, toggleTheme, currentTime }) => {
 						}`}
 					>
 						AL
+					</h2>
+					<h2
+						onClick={() => navigate('/work')}
+						className={`ml-2 text-lg cursor-pointer font-medium ${
+							isDark ? 'text-gray-400' : 'text-gray-600'
+						}`}
+					>
+						Projects
+					</h2>
+					<h2
+						onClick={() => navigate('/experience')}
+						className={`ml-2 text-lg cursor-pointer font-medium ${
+							isDark ? 'text-gray-400' : 'text-gray-600'
+						}`}
+					>
+						Experience
 					</h2>
 				</div>
 

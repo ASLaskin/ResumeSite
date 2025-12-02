@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
 import WorkPortfolio from './pages/Work.jsx';
 import { ThemeProvider } from './contexts/themeContext.jsx';
+import Experience from './pages/Experience.jsx';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
 				<Routes>
 					<Route path="/" element={<App />} />
 					<Route path="/work" element={<WorkPortfolio />} />
+					<Route path="/experience" element={<Experience />} />
 				</Routes>
 			</ThemeProvider>
 		</BrowserRouter>

@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
+import { Download, MapPin, Calendar, ChevronRight } from 'lucide-react';
 import Header from '../components/Header';
-import ProjectCard from '../components/ProjectCard';
-import { projects } from '../projectData';
 import { useTheme } from '../contexts/themeContext';
 
-function WorkPortfolio() {
+function Experience() {
 	const { isDark, toggleTheme } = useTheme();
 	const [currentTime, setCurrentTime] = useState(new Date());
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [showMain, setShowMain] = useState(false);
 
 	useEffect(() => {
 		const timer = setInterval(() => {
@@ -28,24 +25,40 @@ function WorkPortfolio() {
 		link.click();
 	};
 
-	if (showMain) {
-		return (
-			<div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
-				<div className="text-center">
-					<h1 className="text-4xl font-bold mb-4">Back to Main Portfolio</h1>
-					<p className="text-gray-400 mb-8">
-						This would navigate back to your main landing page
-					</p>
-					<button
-						onClick={() => setShowMain(false)}
-						className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-500 transition-colors"
-					>
-						Return to Work Page
-					</button>
-				</div>
-			</div>
-		);
-	}
+	const experiences = [
+		{
+			title: 'Software Engineer',
+			company: 'Roleo - Adjunct Faculty Matching Platform',
+			period: 'June 2025 – Present',
+			location: 'Gainesville, FL',
+			highlights: [
+				'Built and deployed a fullstack web application in a 3 person team using Next.js, React, and TypeScript, currently supporting 40+ active users',
+				'Designed a vector embedding-based matching algorithm to solve user-job mismatch, increasing match relevancy and reducing manual filtering',
+				'Migrated deployment from Vercel to AWS, setting up CI/CD pipelines with GitHub Actions and automating infrastructure with Terraform'
+			]
+		},
+		{
+			title: 'IT Intern',
+			company: 'Purvis, Gray and Company',
+			period: 'July 2025 – Present',
+			location: 'Gainesville, FL',
+			highlights: [
+				'Automated laptop setup using Python, Playwright, and Chocolatey, reducing device setup time by 2 hours per laptop',
+				'Documented the automation process for easy adoption across the IT team, improving onboarding efficiency and lowering error rates',
+				'Maintained Windows Server and Active Directory environments, integrating Azure services and Atera RMM'
+			]
+		},
+		{
+			title: 'Teaching Assistant – Programming Fundamentals 1',
+			company: 'University of Florida',
+			period: 'Jan. 2023 – May 2023',
+			location: 'Gainesville, FL',
+			highlights: [
+				'Led instructional sessions on Python programming concepts and algorithms to audiences, achieving 95% satisfaction rate',
+				'Facilitated hands-on coding workshops for 30 students, providing technical support'
+			]
+		}
+	];
 
 	return (
 		<div
@@ -80,15 +93,13 @@ function WorkPortfolio() {
 								style={{ animationDelay: '0.2s' }}
 							>
 								<h1 className="text-4xl lg:text-5xl font-bold mb-6">
-									My Work
-									
+									Experience
 								</h1>
 								<p
 									className={`text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'
 										}`}
 								>
-									A collection of projects that showcase my passion for building
-									scalable, user-focused applications with modern technologies.
+									My professional journey building impactful software solutions and supporting teams through technology.
 								</p>
 
 								<button
@@ -107,15 +118,56 @@ function WorkPortfolio() {
 							</div>
 						</div>
 
-						<div className="grid gap-8 md:grid-cols-2">
-							{projects.map((project, index) => (
-								<ProjectCard
+						<div className="space-y-8">
+							{experiences.map((experience, index) => (
+								<div
 									key={index}
-									project={project}
-									isDark={isDark}
-									isLoaded={isLoaded}
-									delay={`${0.4 + index * 0.1}s`}
-								/>
+									className={`opacity-0 ${isLoaded ? 'animate-fadeInUp' : ''}`}
+									style={{ animationDelay: `${0.4 + index * 0.15}s` }}
+								>
+									<div
+										className={`p-8 rounded-2xl border transition-all duration-300 hover:scale-[1.02] ${isDark
+												? 'bg-gray-900/50 border-gray-700/50 hover:border-emerald-500/50'
+												: 'bg-white/50 border-gray-200/50 hover:border-emerald-600/50'
+											} backdrop-blur-sm`}
+									>
+										<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+											<div>
+												<h3 className={`text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+													{experience.title}
+												</h3>
+												<p className={`text-lg font-semibold mb-2 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}>
+													{experience.company}
+												</p>
+											</div>
+											<div className="flex flex-col items-start md:items-end gap-2">
+												<div className={`flex items-center gap-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+													<Calendar size={16} />
+													<span className="text-sm">{experience.period}</span>
+												</div>
+												<div className={`flex items-center gap-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+													<MapPin size={16} />
+													<span className="text-sm">{experience.location}</span>
+												</div>
+											</div>
+										</div>
+
+										<ul className="space-y-3">
+											{experience.highlights.map((highlight, idx) => (
+												<li
+													key={idx}
+													className={`flex gap-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}
+												>
+													<ChevronRight
+														size={20}
+														className={`flex-shrink-0 mt-0.5 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}
+													/>
+													<span>{highlight}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
 							))}
 						</div>
 
@@ -175,73 +227,12 @@ function WorkPortfolio() {
 					}
 				}
 
-				@keyframes fadeInLeft {
-					from {
-						opacity: 0;
-						transform: translateX(-30px);
-					}
-					to {
-						opacity: 1;
-						transform: translateX(0);
-					}
-				}
-
-				@keyframes fadeInRight {
-					from {
-						opacity: 0;
-						transform: translateX(30px);
-					}
-					to {
-						opacity: 1;
-						transform: translateX(0);
-					}
-				}
-
-				@keyframes glow {
-					0%,
-					100% {
-						text-shadow: 0 0 20px currentColor;
-					}
-					50% {
-						text-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
-					}
-				}
-
-				@keyframes float {
-					0%,
-					100% {
-						transform: translateY(0px) rotate(0deg);
-					}
-					33% {
-						transform: translateY(-20px) rotate(120deg);
-					}
-					66% {
-						transform: translateY(10px) rotate(240deg);
-					}
-				}
-
 				.animate-fadeInUp {
 					animation: fadeInUp 0.8s ease-out forwards;
-				}
-
-				.animate-fadeInLeft {
-					animation: fadeInLeft 0.6s ease-out forwards;
-				}
-
-				.animate-fadeInRight {
-					animation: fadeInRight 0.6s ease-out forwards;
-				}
-
-				.animate-glow {
-					animation: glow 3s ease-in-out infinite;
-				}
-
-				.animate-float {
-					animation: float 4s ease-in-out infinite;
 				}
 			`}</style>
 		</div>
 	);
 }
 
-export default WorkPortfolio;
+export default Experience;

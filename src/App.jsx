@@ -100,23 +100,9 @@ function App() {
 								style={{ animationDelay: '0.4s' }}
 							>
 								<h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8">
-									Building reliable{' '}
-									<span
-										className={`inline-block animate-glow ${
-											isDark ? 'text-emerald-400' : 'text-emerald-600'
-										}`}
-									>
-										systems
-									</span>
+									Building reliable systems
 									<br className="hidden sm:block" />
-									<span className="block sm:inline"> with precision and </span>
-									<span
-										className={`inline-block animate-glow ${
-											isDark ? 'text-emerald-400' : 'text-emerald-600'
-										}`}
-										style={{ animationDelay: '0.5s' }}
-									>
-										purpose
+									<span className="block sm:inline"> with precision and purpose
 									</span>
 								</h1>
 							</div>
@@ -134,7 +120,7 @@ function App() {
 								>
 									I'm <span className="font-semibold">Andrew Laskin</span>, a
 									junior software engineer focused on scalable code and shipping
-									real-world products that solve meaningful problems.
+									products that solve meaningful problems.
 								</p>
 							</div>
 
