@@ -10,7 +10,7 @@ export default function ResumePage() {
                 About
               </a>
               <a
-                href="/Resume.pdf"
+                href="/andrewResume.pdf"
                 download
                 className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
               >
@@ -64,7 +64,7 @@ export default function ResumePage() {
               Get in touch
             </a>
             <a
-              href="/resume.pdf"
+              href="/andrewResume.pdf"
               download
               className="px-6 py-3 text-sm font-medium border border-neutral-700 text-white hover:border-neutral-500 hover:bg-neutral-900 transition-all text-center"
             >
