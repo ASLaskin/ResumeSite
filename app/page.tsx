@@ -10,7 +10,7 @@ export default function ResumePage() {
                 About
               </a>
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 download
                 className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
               >
